@@ -57,7 +57,7 @@ def main():
             print(f"User prompt: {args.user_prompt}")
             print(f"Prompt tokens: {prompt_token_count}")
             print(f"Response tokens: {response_token_count}")
-        print("Response:")
+        print("Final response:")
         print(response_text)
 
 
