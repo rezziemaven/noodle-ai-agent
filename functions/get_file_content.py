@@ -5,7 +5,7 @@ from google.genai import types
 from config import MAX_CHARS
 
 
-def get_file_content(working_directory, file_path):
+def _get_file_content(working_directory, file_path):
     try:
         working_dir_path = os.path.abspath(working_directory)
         full_file_path = os.path.normpath(os.path.join(working_dir_path, file_path))
@@ -26,6 +26,22 @@ def get_file_content(working_directory, file_path):
 
     except Exception as e:
         return f"Error: {e}"
+
+
+def get_file_content(file_path: str) -> str:
+    """Reads content from a file relative to the working directory
+
+    Args:
+        file_path: Path of file to read content from, relative to the working directory
+
+    Returns:
+        The content of the file, or an error message.
+    """
+
+    working_directory = "./calculator"
+    return _get_file_content(working_directory, file_path)
+
+
 schema_get_file_content_genai = types.FunctionDeclaration(
     name="get_file_content",
     description="Reads content from a file relative to the working directory",
