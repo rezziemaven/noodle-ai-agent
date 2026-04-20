@@ -48,11 +48,11 @@ def main():
 
         return use_ollama_sdk(args.user_prompt, verbose=args.verbose)
 
-    prompt_token_count, response_token_count, response_text, function_results = (
+    prompt_token_count, response_token_count, response_text, function_calls = (
         generate_response()
     )
 
-    if len(function_results) == 0:
+    if len(function_calls) == 0:
         if args.verbose:
             print(f"User prompt: {args.user_prompt}")
             print(f"Prompt tokens: {prompt_token_count}")
