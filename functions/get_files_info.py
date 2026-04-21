@@ -2,6 +2,8 @@ import os
 
 from google.genai import types
 
+from config import WORKING_DIRECTORY
+
 
 def _get_files_info(working_directory, directory="."):
     try:
@@ -38,8 +40,7 @@ def get_files_info(directory: str = ".") -> str:
         A listing of the files in the directory, or an error message.
     """
 
-    working_directory = "./calculator"
-    return _get_files_info(working_directory, directory)
+    return _get_files_info(WORKING_DIRECTORY, directory)
 
 
 schema_get_files_info_genai = types.FunctionDeclaration(

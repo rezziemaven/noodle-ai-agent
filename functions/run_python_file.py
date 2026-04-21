@@ -3,6 +3,8 @@ import subprocess
 
 from google.genai import types
 
+from config import WORKING_DIRECTORY
+
 
 def _run_python_file(working_directory, file_path, args=None):
 
@@ -54,8 +56,7 @@ def run_python_file(file_path: str, args=None) -> str:
         A message with the content from STDOUT or STDERR if the execution was successful, or an error message.
     """
 
-    working_directory = "./calculator"
-    return _run_python_file(working_directory, file_path, args)
+    return _run_python_file(WORKING_DIRECTORY, file_path, args)
 
 
 schema_run_python_file_genai = types.FunctionDeclaration(

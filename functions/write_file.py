@@ -2,6 +2,8 @@ import os
 
 from google.genai import types
 
+from config import WORKING_DIRECTORY
+
 
 def _write_file(working_directory, file_path, content):
     try:
@@ -40,8 +42,7 @@ def write_file(file_path: str, content: str) -> str:
         A success message with the number of characters written, or an error message.
     """
 
-    working_directory = "./calculator"
-    return _write_file(working_directory, file_path, content)
+    return _write_file(WORKING_DIRECTORY, file_path, content)
 
 
 schema_write_file_genai = types.FunctionDeclaration(

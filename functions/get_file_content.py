@@ -2,7 +2,7 @@ import os
 
 from google.genai import types
 
-from config import MAX_CHARS
+from config import MAX_CHARS, WORKING_DIRECTORY
 
 
 def _get_file_content(working_directory, file_path):
@@ -38,8 +38,7 @@ def get_file_content(file_path: str) -> str:
         The content of the file, or an error message.
     """
 
-    working_directory = "./calculator"
-    return _get_file_content(working_directory, file_path)
+    return _get_file_content(WORKING_DIRECTORY, file_path)
 
 
 schema_get_file_content_genai = types.FunctionDeclaration(
