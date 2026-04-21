@@ -32,7 +32,7 @@ def main():
     args = parser.parse_args()
 
     def generate_response(sdk="ollama"):
-        if sdk == "gemini":
+        if sdk == "genai":
             return use_genai_sdk(gemini_api_key, args.user_prompt, verbose=args.verbose)
 
         # Add any additional SDKs here
