@@ -83,15 +83,15 @@ Example usage:
 
 Noodle can be configured in the following ways:
 
-**`config.py`**
+### **`config.py`**
 The main config file. Here you can modify the models to use with Gemini or Ollama, the system prompt to use (imported from `prompts.py`), the working directory (initially set to `demo/`) and more.
 
-**`prompts.py`**
+### **`prompts.py`**
 This file contains two prompts: `test_system_prompt` and `system_prompt`. The system prompt is the base set of instructions given to the model which it should carry out no matter what. To demonstrate how it works, feel free to change the `SYSTEM_PROMPT` variable in `config.py` to `test_symptom_prompt` and see what happens!
 
 As you work, you may need to modify the `system_prompt` over time. It is recommended to make your instructions as explicit as possible to avoid any unintended side effects. You can try using other models like Claude or ChatGPT to assist you with customising your agent as you see fit.
 
-**Adding SDKs**
+### **Adding SDKs**
 While Noodle initially features support for both Google Gemini and Ollama, you can add additional SDKs of your choice, such as OpenAI or OpenRouter, albeit manually. If this is necessary, please do the following:
 
 1. Locate the documentation for your chosen SDK to aid in setup.
