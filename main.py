@@ -37,7 +37,7 @@ def main():
 
         # Add any additional SDKs here
 
-        return use_ollama_sdk(args.user_prompt, verbose=args.verbose)
+        return use_ollama_sdk(args.user_prompt, args.verbose)
 
     prompt_token_count, response_token_count, response_text, function_calls = (
         generate_response()
